@@ -1,0 +1,33 @@
+<!-- 
+Crie uma página web que pergunte ao usuário qual sua idade e qual seu nome.
+
+Por exemplo suponha que o nome é “João” e a idade é 20.
+
+A página deve então mostrar num alerta a mensagem “Olá, J. Você nasceu em 2004”.
+
+Em outras palavras, a mensagem deve chamar o usuário pela primeira letra do nome, e mostrar o ano em que nasceu (calculado a partir da idade, assumindo que hoje é 2024 e que o usuário já fez aniversário este ano).
+
+/ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <script>
+      let idade = Number(prompt('Qual sua idade?'));
+      let nome = prompt('Qual seu nome?');
+      let dataNascimento = 2024 - idade;
+      let mensagem = `Olá ${nome[0]}. Voce nasceu em ${dataNascimento}`;
+      alert(mensagem);
+    </script>
+  </body>
+
+</html>
