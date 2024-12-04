@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Cores</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        #seletor {
+            display: flex;
+            flex-direction: column;
+        }
+        #area {
+            width: 60%;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        #area h1 {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="seletor">
+        <button onclick="mudarCorFundo('lightblue')">Azul Claro</button>
+        <button onclick="mudarCorFundo('lightgreen')">Verde Claro</button>
+        <button onclick="mudarCorFundo('lightpink')">Rosa Claro</button>
+        <button onclick="mudarCorFundo('lightbrown')">Marrom Claro</button>
+
+        <br>
+
+        <button onclick="mudarCorFonte('black')">Preto</button>
+        <button onclick="mudarCorFonte('white')">Branco</button>
+        <button onclick="mudarCorFonte('blue')">Azul</button>
+        <button onclick="mudarCorFonte('red')">Vermelho</button>
+    </div>
+
+    <div id="area">
+        <h1>Lorem Ipsum</h1>
+        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+        <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+
+    <script>
+        function mudarCorFundo(cor) {
+            document.body.style.backgroundColor = cor;
+        }
+
+        function mudarCorFonte(cor) {
+            document.getElementById('area').style.color = cor;
+        }
+    </script>
+</body>
+</html>
