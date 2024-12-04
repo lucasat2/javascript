@@ -1,0 +1,28 @@
+<!-- Faça uma página HTML com um parágrafo escrito “clique em mim !”.
+Ao clicar no parágrafo, o texto dele deve mudar para “você clicou em mim”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Troca texto ao clicar</title>
+
+  </head>
+
+  <body>
+
+    <p id="trocaTexto">Clique em mim!</p>
+
+    <script>
+
+      const p = document.getElementById("trocaTexto")
+      p.addEventListener('click', () => {
+        p.textContent = "Voce clicou em mim!";
+      });
+
+    </script>
+  </body>
+
+</html>
