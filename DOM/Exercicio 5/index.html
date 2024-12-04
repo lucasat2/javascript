@@ -1,0 +1,56 @@
+<!-- 
+ 
+Faça uma página HTML contendo um input para digitar um número, e um botão “mostrar”.
+
+Ao clicar no botão, deve aparecer na página o número que foi digitado formatado com exatamente duas casas decimais.
+
+Por exemplo, ao digitar 3, deve aparecer 3.00
+
+Ao digitar 3.141592, deve aparecer 3.14, etc.
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatar Número</title>
+    <style>
+      div {
+        width: fit-content;
+        background-color: black;
+        color: yellow;
+        padding: 5px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <input type="text" id="numero" placeholder="Digite um número">
+    <button id="botao">Mostrar</button>
+    <div id="numeroDuasCasas"></div>
+
+
+    <script>
+
+
+      const button = document.getElementById("botao");
+      const numeroDuasCasas = document.getElementById("numeroDuasCasas");
+
+      button.addEventListener('click', () => {
+        const numero = parseFloat(document.getElementById('numero').value);
+        numeroDuasCasas.textContent = numero.toFixed(2);
+
+      });
+    </script>
+
+  </body>
+
+</html>
