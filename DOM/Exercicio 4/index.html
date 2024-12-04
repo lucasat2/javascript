@@ -1,0 +1,50 @@
+<!-- Joãozinho fez uma página com um input e um botão.
+
+Ao clicar no botão, ele queria mostrar num alerta o texto digitado no input.
+
+Então Joãozinho escreveu o seguinte javascript:
+
+const inputValue = document.querySelector("input").value;
+const button = document.querySelector("button");
+
+function printText() {
+  alert(inputValue);
+}
+
+button.addEventListener("click", printText);
+
+Mas a página não está funcionando como Joãozinho queria.
+Explique por que não, e como seria o correto. -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <input type="text">
+    <button>Print</button>
+
+    <script>
+
+      const button = document.querySelector("button");
+
+      function printText() {
+        const inputValue = document.querySelector("input").value;
+        alert(inputValue);
+
+      }
+
+      button.addEventListener("click", printText);
+    </script>
+  </body>
+
+</html>
