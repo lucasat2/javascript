@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Sorteador de Números</title>
+  </head>
+
+  <body>
+    <label for="min">Valor mínimo:</label>
+    <input type="text" id="min">
+    <br>
+    <label for="max">Valor máximo:</label>
+    <input type="text" id="max">
+    <br>
+    <button onclick="sortear()">Sortear</button>
+    <p id="resultado"></p>
+    <script src="script.js"></script>
+  </body>
+
+  <script>
+
+    function sortear() {
+        const minInput = document.getElementById('min');
+        const maxInput = document.getElementById('max');
+        const resultado = document.getElementById('resultado');
+
+        const min = parseInt(minInput.value);
+        const max = parseInt(maxInput.value);
+
+        // Validações
+        if (isNaN(min) || isNaN(max)) {
+          resultado.textContent = "Os valores inseridos não são números.";
+          return;
+        }
+
+        if (min < 0 || max < 0) {
+          resultado.textContent = "Os valores devem ser maiores ou iguais a zero.";
+          return;
+        }
+
+        if (min >= max) {
+          resultado.textContent = "O valor mínimo deve ser menor que o valor máximo.";
+          return;
+        }
+
+        // Sorteio
+        const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+        resultado.textContent = `O número sorteado é: ${numeroAleatorio}`;
+      }
+  </script>
+
+</html>
