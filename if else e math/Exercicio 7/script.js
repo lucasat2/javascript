@@ -16,7 +16,7 @@ Em seguida modifique o código com o seguinte propósito: defina constantes adic
 
 /* 
 
- Regra de negocio para ganhar desconto na primeira parte é : 
+ A Regra de negocio para ganhar desconto na primeira parte é : 
 
    Se o cliente for premium
    Se o o total de pedidos for maior que 100 reais
