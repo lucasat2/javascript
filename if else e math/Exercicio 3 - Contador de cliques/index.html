@@ -1,0 +1,47 @@
+<!-- 
+Faça um botão que conta quantas vezes ele foi clicado.
+
+No início, o botão tem escrito “Clique em mim !”.
+
+Ao clicar, ele muda para “Clicou 1 vez” (no singular).
+
+Ao clicar de novo, ele muda para “Clicou 2 vezes” (plural).
+
+Clicando mais vezes, ele vai aumentando a contagem, até o 10º clique: “Clicou 10 vezes”.
+
+Ao clicar pela 11ª vez, ele muda para “Ainda não enjoou ?”.
+
+E continua com esse texto mesmo clicando mais vezes. -->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+  </head>
+
+  <body>
+    <button id="botao">Clique em mim!</button>
+
+
+    <script>
+
+      const botao = document.getElementById('botao');
+      
+      let contagem = 0;
+
+      botao.addEventListener('click', () => {
+        contagem++;
+        if (contagem <= 10) {
+          botao.textContent = `Clicou ${contagem} vez${contagem === 1 ? '' : 'es'}`;
+        } else {
+          botao.textContent = 'Ainda não enjoou ?';
+        }
+      });
+    </script>
+  </body>
+
+</html>
