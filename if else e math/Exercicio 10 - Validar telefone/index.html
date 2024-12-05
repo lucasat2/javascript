@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Validador de Telefone</title>
+  </head>
+
+  <body>
+    <input type="text" id="telefone" placeholder="(XX) XXXX-XXXX ou (XX) XXXXX-XXXX">
+    <button onclick="validarTelefone()">Validar</button>
+    <p id="resultado"></p>
+    <script src="script.js"></script>
+  </body>
+
+  <script>
+
+    function validarTelefone() {
+
+      const telefoneInput = document.getElementById('telefone');
+      const resultado = document.getElementById('resultado');
+
+
+      const regex = /^\(\d{2}\)\s\d{4}-\d{4}$|^\(\d{2}\)\s\d{5}-\d{4}$/;
+
+      if (regex.test(telefoneInput.value)) {
+        resultado.textContent = "Telefone aceito";
+      } else {
+        resultado.textContent = "Não é um telefone válido";
+      }
+    }
+
+  </script>
+
+</html>
