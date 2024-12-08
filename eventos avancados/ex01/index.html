@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- SELECT COM AS IMAGENS 
+     -->
+    <select id="selecaoProdutos" onchange="atualizaImagem()">
+
+      <option value="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT850QDznr_nYv1r65lsKXRj0Grf8vtC_KjeaPBth50gjqzpvFYdPfo8jzIDQTKwqK0qTOnTCKHeQNq41e1v9jKmQ" id="batata">Batata</option>
+
+      <option value="https://www.svicente.com.br/on/demandware.static/-/Sites-storefront-catalog-sv/default/dw472a82ce/Produtos/15560-0000000003454-presunto%20cozido%20seara%20bandeja%20kg-seara-2.jpg" id="presunto">Presunto</option>
+
+      <option value="https://acdn.mitiendanube.com/stores/738/706/products/queijo-parmesao-premium-fracionado1-2be9dd2eed2968340f16451759677838-1024-1024.jpg" id="queijo">Queijo</option>
+    </select>
+
+
+    <!-- TAG IMG  -->
+    <div>
+      <img id="imagemProduto" width="200px" src="" />
+    </div>
+
+
+
+    <script>
+
+      //  SELECIONAR O SELECT E SELECIONAR A DIV IMG
+      const selectElement = document.getElementById('selecaoProdutos');
+      const imagemDiv = document.getElementById('imagemProduto');
+
+      function atualizaImagem() {
+
+        imagemDiv.src = selectElement.value;
+
+      }
+
+
+    </script>
+  </body>
+
+</html>

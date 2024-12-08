@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Selecionador de Data</title>
+  </head>
+
+  <body>
+    <form>
+      <label for="data">Selecione uma data:</label>
+      <input type="date" id="data" name="data">
+
+      <button type="button" onclick="exibirInformacoes()">Exibir Informações</button>
+
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+
+      function exibirInformacoes() {
+
+        const dataInput = document.getElementById('data');
+        const data = new Date(dataInput.value ); 
+        const diaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+        const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+        const diaMes = data.getUTCDate();
+        const diaSemanaIndex = data.getDay();
+        const mesNumerico = data.getMonth() + 1;
+        const ano = data.getFullYear();
+
+        let resultado = '';
+        resultado += `Dia do mês: ${diaMes}\n`;
+        resultado += `Dia da semana: ${diaSemana[diaSemanaIndex]}\n`;
+        resultado += `Mês (numérico): ${mesNumerico}\n`;
+        resultado += `Mês (por extenso): ${meses[mesNumerico - 1]}\n`;
+        resultado += `Ano: ${ano}`;
+
+        document.getElementById('resultado').textContent = resultado;
+      }
+
+
+
+
+      /* COM OBJETOS
+      
+
+
+const diasSemana = {
+    0: 'Domingo',
+    1: 'Segunda',
+  
+};
+
+const meses = {
+    1: 'Janeiro',
+    2: 'Fevereiro'
+};
+
+function exibirInformacoes() {
+
+    let resultado = '';
+    resultado += `Dia do mês: ${diaMes}\n`;
+    resultado += `Dia da semana: ${diasSemana[diaSemanaIndex]}\n`;
+    resultado += `Mês (numérico): ${mesNumerico}\n`;
+    resultado += `Mês (por extenso): ${meses[mesNumerico]}\n`;
+    resultado += `Ano: ${ano}`;
+
+}
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      */
+    </script>
+  </body>
+
+</html>
