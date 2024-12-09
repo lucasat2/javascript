@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de HTML ao Vivo</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="textarea-container">
+
+        <textarea id="editor">
+
+          <h1>Teste</h1>
+            <ul>
+                <li>ponto 1</li>
+                <li>ponto 2</li>
+            </ul>
+            <p>Funciona!</p></textarea>
+      </div>
+
+
+      <div class="output-container">
+        <div id="output"></div>
+      </div>
+    </div>
+
+
+    <script>
+      const editor = document.getElementById('editor');
+      const output = document.getElementById('output');
+
+      // Ouvir o que é digitado
+      editor.addEventListener('input', () => {
+        output.innerHTML = editor.value;
+      });
+
+      // Exibir
+      output.innerHTML = editor.value;
+
+    </script>
+  </body>
+
+</html>

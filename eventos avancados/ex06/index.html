@@ -1,0 +1,43 @@
+<!-- Faça um <input type="text"> para preenchimento do nome completo da pessoa.
+
+Esse input só deve aceitar letras (minúsculas ou maiúsculas, somente sem acentos) e espaços em branco. Se o usuário digitar um caractere que não é permitido, o caractere simplesmente não aparece no input como se não tivesse sido digitado.
+
+Sugestão: pesquise sobre event.key
+Sugestão 2: saiba que o evento “input” é disparado depois que o input mudou de valor. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Nome</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input id="input" type="text" placeholder="Preencha seu nome completo" style="width: 200px;">
+
+    <script>
+      document.getElementById("input").addEventListener("keydown", function (event) {
+
+        const letras = /^[a-zA-Z\s]$/;
+
+        if (!event.key.match(letras) && event.key !== "Backspace") {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+
+</html>

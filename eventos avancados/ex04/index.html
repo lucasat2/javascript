@@ -1,0 +1,101 @@
+<!-- Faça uma página que tem um <input type="text"> para digitar um número de telefone, e um botão escrito “Cadastrar”.
+
+Inicialmente, o botão deve estar desabilitado (propriedade disabled).
+
+Os formatos aceitos de telefone são “(XX) XXXX-XXXX” ou “(XX) XXXXX-XXXX”. Obs: não importam espaços em branco no início ou no fim, use trim().
+
+Enquanto o usuário digita no input, enquanto o input estiver inválido (vazio ou fora do formato), deve aparecer embaixo do input uma mensagem em vermelho com fonte pequena “Telefone inválido” (sugestão: use classe CSS para mostrar ou ocultar), e a borda do input deve estar vermelha.
+
+Quando o input ficar correto, os dois sinalizadores de erro desaparecem, e o botão fica habilitado.
+
+Se o usuário voltar a digitar no input e ele ficar inválido de novo, voltam a aparecer os dois sinalizadores de erro e o botão é desabilitado novamente.
+
+Essa detecção e sinalização deve ser feita em “tempo real” para cada tecla digitada no input.
+
+(ps: o botão não precisa fazer nada, é só para ilustrar que é possível desativar um botão enquanto o formulário não está preenchido corretamente) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefone </title>
+    <style>
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+
+      .mensagemErro {
+        color: red;
+        font-size: 12px;
+        display: none;
+      }
+
+      .invalid {
+        border-color: red;
+      }
+      
+
+    </style>
+  </head>
+
+  
+  <body>
+
+
+    <input type="text" placeholder="Digite o seu número de telefone" style="width: 250px;" id="telefoneInput"> <br>
+    <div class="mensagemErro">Telefone inválido</div>
+    <button type="button" disabled>Cadastrar</button>
+
+
+    <script>
+
+      // SELECAO
+      const telefoneInput = document.getElementById('telefoneInput');
+      const cadastrarButton = document.querySelector('button');
+      const mensagemErro = document.querySelector(".mensagemErro");
+
+
+      const telefoneRegex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
+
+
+      telefoneInput.addEventListener("input", () => {
+        const telefone = telefoneInput.value.trim();
+
+        if (telefoneRegex.test(telefone)) {
+
+          telefoneInput.classList.remove("invalid");
+          mensagemErro.style.display = "none";
+          cadastrarButton.disabled = false;
+        } else {
+
+          telefoneInput.classList.add("invalid");
+          mensagemErro.style.display = "block";
+          cadastrarButton.disabled = true;
+        }
+      });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+
+</html>

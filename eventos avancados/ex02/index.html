@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Tarefa</title>
+  </head>
+
+  <body>
+    <form id="task-form">
+      Tarefa: <input id="input-task" type="text" />
+      <button id="add-button" type="submit">Adicionar</button>
+      <p id="confirmacao"></p>
+    </form>
+
+    <br>
+
+    <ul id="task-list"></ul>
+
+    <script>
+      // Referências aos elementos do DOM
+      const taskForm = document.getElementById("task-form");
+      const taskListUl = document.getElementById("task-list");
+      const inputTask = document.getElementById("input-task");
+      const confirmacao = document.getElementById("confirmacao");
+
+
+      taskForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Obter o valor da tarefa
+        const task = inputTask.value;
+
+
+        if (task === "") {
+          confirmacao.innerHTML = "Por favor, digite uma tarefa.";
+          return;
+        }
+
+        const listItem = document.createElement("li");
+        listItem.textContent = task;
+        taskListUl.appendChild(listItem);
+
+
+        inputTask.value = "";
+        confirmacao.innerHTML = "Tarefa adicionada!";
+      });
+
+
+    </script>
+  </body>
+
+</html>

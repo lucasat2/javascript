@@ -1,0 +1,84 @@
+<!-- Faça uma página web com dois <input type="text">.
+
+Vamos fazer com que eles sejam “gêmeos”, ou seja, tudo que acontece em um reflete automaticamente no outro:
+
+Ao passar o mouse (hover) em qualquer um dos dois inputs, ambos devem ficar com fundo azul claro (ao tirar o mouse de cima eles perdem o fundo azul).
+Ao focalizar (clicar) em um input, os dois devem ficar com borda azul escura. Ao desfocar, os dois perdem a borda azul.
+Ao digitar num input, o mesmo texto que está sendo digitado deve aparecer no outro input. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+
+
+    <script>
+
+      // SELECAO DOS INPUTS
+
+      const input1 = document.getElementById('input1');
+      const input2 = document.getElementById('input2');
+
+
+      //  SINCRONIZAR O TEXTO
+
+      input1.addEventListener('input', () => {
+        input2.value = input1.value;
+      });
+
+      input2.addEventListener('input', () => {
+        input1.value = input2.value;
+      });
+
+
+      //  OUVINTES
+      input1.addEventListener('mouseenter', addHover);
+      input2.addEventListener('mouseenter', addHover);
+      input1.addEventListener('mouseleave', removeHover);
+      input2.addEventListener('mouseleave', removeHover);
+      input1.addEventListener('focus', addBorder);
+      input2.addEventListener('focus', addBorder);
+      input1.addEventListener('blur', removeBorder);
+      input2.addEventListener('blur', removeBorder)
+
+
+      // FUNCOES
+
+      function addHover() {
+        input1.style.backgroundColor = 'blue';
+        input2.style.backgroundColor = 'blue';
+      }
+
+      function removeHover() {
+        input1.style.backgroundColor = 'white';
+        input2.style.backgroundColor = 'white';
+      }
+
+      function addBorder() {
+        input1.style.border = '2px solid blue';
+        input2.style.border = '2px solid blue';
+      }
+
+      function removeBorder() {
+        input1.style.border = 'none';
+        input2.style.border = 'none';
+      }
+
+
+    </script>
+
+
+
+  </body>
+
+</html>
